@@ -34,4 +34,8 @@ public enum GameStatus {
     public boolean isNothing() {
         return this == NOTHING;
     }
+
+    public String getMessage() {
+        return message;
+    }
 }

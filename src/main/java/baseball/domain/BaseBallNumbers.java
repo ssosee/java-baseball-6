@@ -17,13 +17,13 @@ public class BaseBallNumbers {
 
     private void validationDuplicated(List<Integer> numbers) {
         Set<Integer> answers = new HashSet<>(numbers);
-        if (isSize(answers)) {
+        if (!isSize(answers)) {
             throw new IllegalArgumentException(INVALID_NUMBER_DUPLICATED_MESSAGE);
         }
     }
 
     private boolean isSize(Set<Integer> answers) {
-        return answers.size() != TARGET_NUMBER_SIZE;
+        return answers.size() == TARGET_NUMBER_SIZE;
     }
 
     public GameResult play(List<Integer> userNums) {
@@ -46,6 +46,13 @@ public class BaseBallNumbers {
     }
 
     private List<BaseBallNumber> mapBaseBallNumbers(List<Integer> numbers) {
+//        List<BaseBallNumber> baseBallNumbers = new ArrayList<>();
+//        for (int i = 0; i < numbers.size(); i++) {
+//            baseBallNumbers.add(new BaseBallNumber(numbers.get(i), i));
+//        }
+//
+//        return baseBallNumbers;
+
         int startIndexInclusive = 0;
         return IntStream.range(startIndexInclusive, numbers.size())
                 .mapToObj(index -> new BaseBallNumber(numbers.get(index), index))

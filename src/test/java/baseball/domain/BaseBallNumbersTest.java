@@ -1,6 +1,7 @@
 package baseball.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 import java.util.List;
@@ -70,5 +71,13 @@ class BaseBallNumbersTest {
                 () -> assertThat(result.getStrikeCount()).isEqualTo(0),
                 () -> assertThat(result.getBallCount()).isEqualTo(0)
         );
+    }
+
+    @Test
+    @DisplayName("입력값에 중복이 있으면 예외가 발생한다.")
+    void createBaseBallNumbersException() {
+        // given // when // then
+        assertThatThrownBy(() -> new BaseBallNumbers(List.of(1, 1, 2)))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }

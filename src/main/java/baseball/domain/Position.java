@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Position {
     public static final int MIN_POSITION = 0;
     public static final int MAX_POSITION = 2;
-    public static final String INVALID_POSITION_RAMGE_MESSAGE = "숫자의 위치는 0~2 사이의 숫자여야 합니다.";
+    public static final String INVALID_POSITION_RANGE_MESSAGE = "숫자의 위치는 0~2 사이의 숫자여야 합니다.";
     private int position;
 
     public Position(int position) {
@@ -15,7 +15,7 @@ public class Position {
 
     private void validation(int position) {
         if (!isValidRange(position)) {
-            throw new IllegalArgumentException(INVALID_POSITION_RAMGE_MESSAGE);
+            throw new IllegalArgumentException(INVALID_POSITION_RANGE_MESSAGE);
         }
     }
 

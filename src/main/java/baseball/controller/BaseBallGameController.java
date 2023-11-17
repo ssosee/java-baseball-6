@@ -14,7 +14,6 @@ public class BaseBallGameController {
 
     public static final int GAME_EXIT = 2;
     public static final int GAME_RESTART = 1;
-    public static final String INVALID_GAME_RESTART_MESSAGE = "유효한 값이 아닙니다.";
     public static final int MIN_NUMBER = 1;
     public static final int MAX_NUMBER = 9;
 
@@ -28,7 +27,7 @@ public class BaseBallGameController {
 
     public void start() {
         inputView.printGameStart();
-        
+
         while (true) {
             List<Integer> gameNumbers = createBaseBallNumbers();
             BaseBallNumbers baseBallNumbers = new BaseBallNumbers(gameNumbers);

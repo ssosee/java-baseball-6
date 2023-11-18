@@ -46,13 +46,6 @@ public class BaseBallNumbers {
     }
 
     private List<BaseBallNumber> mapBaseBallNumbers(List<Integer> numbers) {
-//        List<BaseBallNumber> baseBallNumbers = new ArrayList<>();
-//        for (int i = 0; i < numbers.size(); i++) {
-//            baseBallNumbers.add(new BaseBallNumber(numbers.get(i), i));
-//        }
-//
-//        return baseBallNumbers;
-
         int startIndexInclusive = 0;
         return IntStream.range(startIndexInclusive, numbers.size())
                 .mapToObj(index -> new BaseBallNumber(numbers.get(index), index))
